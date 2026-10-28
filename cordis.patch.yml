@@ -1,0 +1,11 @@
+# dsh-task-clarifier bundle patch: inserts the dual-face plugin row.
+#
+# The row is a bare plugin by package name. The host half (exports ".") is an
+# intentionally empty Cordis plugin, because the whole clarifier — question
+# engine, brief composer, storage and UI — lives in the browser half declared
+# by `dsh.client` in package.json (exports "./client"). Keeping the engine on
+# the Client side means clarification costs zero model tokens and zero Host
+# round-trips.
+- insert:
+    - id: task-clarifier
+      name: dsh-task-clarifier
